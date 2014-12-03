@@ -22,9 +22,9 @@ public class Main {
         listeTrajet.add(new Trajet("C","A"));
 
         List<Gare> listeGare = new ArrayList<Gare>();
-        listeGare.add(new Gare("A",listeTrajet));
-        listeGare.add(new Gare("B",listeTrajet));
-        listeGare.add(new Gare("C",listeTrajet));
+        listeGare.add(new Gare("A",new EspaceQuai( new EspaceVente()),listeTrajet));
+        listeGare.add(new Gare("B",new EspaceQuai( new EspaceVente()),listeTrajet));
+        listeGare.add(new Gare("C",new EspaceQuai( new EspaceVente()),listeTrajet));
 
         for(int i = 0; i< NB_VOYAGEUR ; i++){
             new Voyageur("i",listeGare).start();

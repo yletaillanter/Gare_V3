@@ -11,9 +11,9 @@ public class EspaceQuai {
     private int trainsEnQuai;
     private ArrayList<Train> listeTrainQuai;
 
-    public EspaceVente espaceVente;EspaceVente
+    public EspaceVente espaceVente;
 
-    EspaceQuai(EspaceVente espaceVente){
+    public EspaceQuai(EspaceVente espaceVente){
         voiesDispo = NB_VOIES;
         trainsEnQuai = 0;
         listeTrainQuai = new ArrayList<Train>();

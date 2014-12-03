@@ -8,7 +8,7 @@ public class Gare {
     private String name;
     private List<Trajet> ListeTrajet;
 
-    public Gare (String name, List<Trajet> ListeTrajet){
+    public Gare (String name,EspaceQuai espaceQuai,List<Trajet> ListeTrajet){
         this.name = name;
         this.ListeTrajet = ListeTrajet;
 
