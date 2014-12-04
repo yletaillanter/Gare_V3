@@ -24,11 +24,10 @@ public class Voyageur extends Thread {
     public void run(){
         Collections.shuffle(listeGare);
         gareAchat = listeGare.get(1);
-        toStringGareAchat();
+        System.out.println("voyageur "+name+" "+toStringGareAchat());
         setTrajet(gareAchat.acheterBillet(this));
-        this.getTrajet().toString();
-        trajet.getGareDepart().entrerGare().accederAuTrain(this);
-
+        System.out.println(name + " fais " + this.getTrajet().toString());
+        if(trajet.getGareDepart().entrerGare().accederAuTrain(this));
     }
 
     public boolean isaUnGuichet() {
@@ -56,6 +55,10 @@ public class Voyageur extends Thread {
     }
 
     public String toStringGareAchat(){
-        return "Gare achat:"+ gareAchat;
+        return "Gare achat:"+ gareAchat.getName();
+    }
+
+    public String getNom() {
+        return name;
     }
 }

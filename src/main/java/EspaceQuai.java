@@ -68,6 +68,7 @@ public class EspaceQuai {
             if (trainListe.getTrajet().equals(voyageur.getTrajet())) {
                 trainListe.embarquer(voyageur);
                 trainListe.majPlaceDispo();
+                System.out.println("Voyageur "+voyageur.getNom()+" j'accède au "+trainListe.getNom());
                 return true;
             }
         }
