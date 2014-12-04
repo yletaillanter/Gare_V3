@@ -27,4 +27,8 @@ public class Gare {
     public void setListeTrajet(List<Trajet> listeTrajet) {
         ListeTrajet = listeTrajet;
     }
+
+    public String getName() {
+        return name;
+    }
 }

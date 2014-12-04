@@ -30,16 +30,40 @@ public class Train extends Thread {
     public void run(){
         Collections.shuffle(ListeTrajet);
         trajet = ListeTrajet.get(1);
-        trajet.toString();
+        System.out.println(getNom()+ " fait le trajet : " +trajet.toString());
+
+        // GARE DE D2PART
         getTrajet().getGareDepart().entrerGare().entrerVoie(this);
+        System.out.println("Train: "+ getNom()+ "arrivé en gare: "+getTrajet().getGareDepart().getName());
 
         try {
-            sleep(100);
+            sleep(ATTENTE);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
+        getTrajet().getGareDepart().entrerGare().quitterVoie(this);
+        System.out.println("Train: "+ getNom()+ "quitte gare: "+getTrajet().getGareDepart().getName());
 
+        // TRAJET
+        try {
+            sleep(ATTENTE*10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        //GARE D'ARRIVEE
+        getTrajet().getGareFin().entrerGare().entrerVoie(this);
+        System.out.println("Train: "+ getNom()+ "arrivé en gare: "+getTrajet().getGareFin().getName());
+
+        try {
+            sleep(ATTENTE);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        getTrajet().getGareDepart().entrerGare().quitterVoie(this);
+        System.out.println("Train : "+ getNom()+ "quitte gare: "+getTrajet().getGareFin().getName());
     }
 
     public Trajet getTrajet() {
