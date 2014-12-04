@@ -13,9 +13,8 @@ public class EspaceVente {
     private List<Trajet> listeTrajet;
 
 
-    public EspaceVente(List<Trajet> listeTrajet) {
+    public EspaceVente() {
         nbGuichetDispo = nbGuichet;
-        this.listeTrajet = listeTrajet;
     }
 
     public void setListeTrajet(List<Trajet> listeTrajet) {

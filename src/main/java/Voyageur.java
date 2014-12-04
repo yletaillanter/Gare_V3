@@ -24,7 +24,9 @@ public class Voyageur extends Thread {
     public void run(){
         Collections.shuffle(listeGare);
         gareAchat = listeGare.get(1);
+        toStringGareAchat();
         setTrajet(gareAchat.acheterBillet(this));
+        this.getTrajet().toString();
         trajet.getGareDepart().entrerGare().accederAuTrain(this);
 
     }
@@ -51,5 +53,9 @@ public class Voyageur extends Thread {
 
     public void setTicketValide(boolean ticketValide) {
         this.ticketValide = ticketValide;
+    }
+
+    public String toStringGareAchat(){
+        return "Gare achat:"+ gareAchat;
     }
 }

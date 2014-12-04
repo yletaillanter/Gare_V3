@@ -13,13 +13,27 @@ public class Main {
         final int NB_VOYAGEUR = 200;
         final int NB_TRAIN = 10;
 
-        List<Trajet> listeTrajet = new ArrayList<Trajet>();
+
 
         Billetterie billetterie = new Billetterie();
-        Gare A = new Gare("A",new EspaceQuai(new EspaceVente(listeTrajet),billetterie));
-        Gare B = new Gare("B",new EspaceQuai(new EspaceVente(listeTrajet),billetterie));
-        Gare C = new Gare("C",new EspaceQuai(new EspaceVente(listeTrajet),billetterie));
 
+        EspaceVente espaceVenteA = new EspaceVente();
+        EspaceVente espaceVenteB = new EspaceVente();
+        EspaceVente espaceVenteC = new EspaceVente();
+
+        EspaceQuai espaceQuaiA = new EspaceQuai(espaceVenteA,billetterie);
+        EspaceQuai espaceQuaiB = new EspaceQuai(espaceVenteB,billetterie);
+        EspaceQuai espaceQuaiC = new EspaceQuai(espaceVenteC,billetterie);
+
+        espaceVenteA.setEspaceQuai(espaceQuaiA);
+        espaceVenteB.setEspaceQuai(espaceQuaiB);
+        espaceVenteC.setEspaceQuai(espaceQuaiC);
+
+        Gare A = new Gare("A", espaceQuaiA);
+        Gare B = new Gare("B",espaceQuaiB);
+        Gare C = new Gare("C",espaceQuaiC);
+
+        List<Trajet> listeTrajet = new ArrayList<Trajet>();
         listeTrajet.add(new Trajet(A,B));
         listeTrajet.add(new Trajet(B,A));
         listeTrajet.add(new Trajet(B,C));
@@ -33,27 +47,21 @@ public class Main {
         listeGare.add(C);
 
         billetterie.setListeTrajet(listeTrajet);
+
         A.setListeTrajet(listeTrajet);
         B.setListeTrajet(listeTrajet);
         C.setListeTrajet(listeTrajet);
 
+        espaceVenteA.setListeTrajet(listeTrajet);
+        espaceVenteB.setListeTrajet(listeTrajet);
+        espaceVenteC.setListeTrajet(listeTrajet);
 
-
-
-
-
-
-
-
-
-
-        for(int i = 0; i< NB_VOYAGEUR ; i++){
-            new Voyageur("i",listeGare).start();
+        for(int j = 0; j< NB_TRAIN ; j++){
+            new Train("train :"+j,listeTrajet).start();
         }
 
         for(int i = 0; i< NB_VOYAGEUR ; i++){
-            new Train("i",listeTrajet).start();
+            new Voyageur("voyageur N°"+i,listeGare).start();
         }
     }
-
 }

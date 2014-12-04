@@ -25,4 +25,9 @@ public class Trajet {
     public void setGareFin(Gare gareFin) {
         this.gareFin = gareFin;
     }
+
+    @Override
+    public String toString() {
+        return "Trajet: "+gareDepart+" à "+gareFin;
+    }
 }
