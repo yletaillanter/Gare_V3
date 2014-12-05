@@ -2,10 +2,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.restlet.ext.json.JsonRepresentation;
+import org.restlet.representation.Representation;
+import org.restlet.resource.Get;
+import org.restlet.resource.ServerResource;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * Created by Yoann on 03/12/2014.
  */
-public class Billetterie {
+public class Billetterie extends ServerResource {
     private Map<Trajet,Integer> mapPlaceDisponible;
     private List<Trajet> listeTrajet;
 
@@ -46,6 +53,17 @@ public class Billetterie {
         for(Trajet t : listeTrajet){
             mapPlaceDisponible.put(t, 0);
         }
+    }
+
+    @Get("json")
+    public Representation getTrajet() throws JSONException {
+        JSONObject trajets = new JSONObject();
+
+
+
+        JsonRepresentation result = new JsonRepresentation(trajets);
+        return result;
+
     }
 
 
