@@ -6,6 +6,7 @@ import org.restlet.data.Protocol;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * Created by Yoann on 03/12/2014.
  */
@@ -35,8 +36,6 @@ public class Main {
         listeTrajet.add(new Trajet(A,C));
         listeTrajet.add(new Trajet(C,A));
 
-
-
         // ############################### REST SERVER ###########################
 
         // Create a component
@@ -56,6 +55,8 @@ public class Main {
         component.start();
 
         // ################################# FIN SERVER REST ~#####################
+
+
 
         EspaceVente espaceVenteA = new EspaceVente();
         EspaceVente espaceVenteB = new EspaceVente();
@@ -77,6 +78,8 @@ public class Main {
         listeGare.add(A);
         listeGare.add(B);
         listeGare.add(C);
+
+
 
         //billetterie.setListeTrajet(listeTrajet);
 

@@ -28,6 +28,6 @@ public class Trajet {
 
     @Override
     public String toString() {
-        return "Trajet : "+gareDepart.getName()+" à "+gareFin.getName();
+        return gareDepart.getName()+""+gareFin.getName();
     }
 }
