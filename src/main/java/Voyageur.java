@@ -7,13 +7,13 @@ import java.util.List;
 public class Voyageur extends Thread {
 
     private String name;
-    List<Gare> listeGare;
-    Gare gareAchat;
+    List<GareImpl> listeGare;
+    GareImpl gareAchat;
     Trajet trajet;
     boolean aUnGuichet = false;
     boolean ticketValide;
 
-    public Voyageur(String name, List<Gare> listeGare){
+    public Voyageur(String name, List<GareImpl> listeGare){
         this.name = name;
         this.listeGare = listeGare;
         aUnGuichet = false;

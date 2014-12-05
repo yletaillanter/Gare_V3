@@ -16,9 +16,9 @@ public class BilletterieApplication extends Application {
     public Restlet createInboundRoot()
     {
         Router router = new Router(getContext());
-        router.attach("/trajet", Billetterie.class);
-        router.attach("/trajet/{trajet}", Billetterie.class);
-        router.attach("/trajet/{trainID}/{trajet}/{nbPlace}", Billetterie.class);
+        router.attach("/trajet", BilletterieServer.class);
+        router.attach("/trajet/{trajet}", BilletterieServer.class);
+        router.attach("/trajet/{trainID}/{trajet}/{nbPlace}", BilletterieServer.class);
         return router;
     }
 

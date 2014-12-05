@@ -7,7 +7,7 @@ import java.util.List;
  */
 public class Train extends Thread {
 
-    final static int ATTENTE = 100;
+    final static int ATTENTE = 1000;
     final static int NB_PLACE_TOTAL = 25;
 
 
@@ -30,7 +30,7 @@ public class Train extends Thread {
     public void run(){
         Collections.shuffle(ListeTrajet);
         trajet = ListeTrajet.get(1);
-        System.out.println(getNom()+ " fait le trajet : " +trajet.toString());
+        System.out.println(getNom()+ " fait le " +trajet.toString());
 
         // GARE DE D2PART
         getTrajet().getGareDepart().entrerGare().entrerVoie(this);

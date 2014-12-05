@@ -2,27 +2,27 @@
  * Created by Yoann on 03/12/2014.
  */
 public class Trajet {
-    private Gare gareDepart;
-    private Gare gareFin;
+    private GareImpl gareDepart;
+    private GareImpl gareFin;
 
-    public Trajet(Gare debut, Gare fin){
+    public Trajet(GareImpl debut, GareImpl fin){
         this.gareDepart = debut;
         this.gareFin = fin;
     }
 
-    public Gare getGareDepart() {
+    public GareImpl getGareDepart() {
         return gareDepart;
     }
 
-    public void setGareDepart(Gare gareDepart) {
+    public void setGareDepart(GareImpl gareDepart) {
         this.gareDepart = gareDepart;
     }
 
-    public Gare getGareFin() {
+    public GareImpl getGareFin() {
         return gareFin;
     }
 
-    public void setGareFin(Gare gareFin) {
+    public void setGareFin(GareImpl gareFin) {
         this.gareFin = gareFin;
     }
 
