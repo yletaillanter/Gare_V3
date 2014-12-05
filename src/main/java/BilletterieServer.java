@@ -32,13 +32,12 @@ public class BilletterieServer extends ServerResource {
      */
     @Get("json")
     public Representation getTrajet() throws JSONException {
-        JSONObject json = new JSONObject();
         Collection<JSONObject> jsonTrajets = new ArrayList<JSONObject>();
-
 
         //for(Trajet trajet : listeTrajet){
         Iterator<Trajet> iteratrajet = billetterie.getListeTrajet().iterator();
         while(iteratrajet.hasNext()){
+            JSONObject json = new JSONObject();
             Trajet trajet = iteratrajet.next();
             json.put("trajet", trajet.toString());
             json.put("place", billetterie.getMapPlaceDisponible().get(trajet));

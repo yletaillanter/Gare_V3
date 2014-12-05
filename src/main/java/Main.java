@@ -20,8 +20,8 @@ public class Main {
     public static void main(String[] args) throws Exception
     {
 
-        final int NB_VOYAGEUR = 200;
-        final int NB_TRAIN = 10;
+        final int NB_VOYAGEUR = 100;
+        final int NB_TRAIN = 5;
 
         GareImpl A = new GareImpl("A");
         GareImpl B = new GareImpl("B");
@@ -42,7 +42,7 @@ public class Main {
         // Create a component
         Component component = new Component();
         Context context = component.getContext().createChildContext();
-        component.getServers().add(Protocol.HTTP, 8124);
+        component.getServers().add(Protocol.HTTP, 8125);
 
         // Create an application
         Application application = new BilletterieApplication(context);

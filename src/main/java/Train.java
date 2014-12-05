@@ -8,7 +8,7 @@ import java.util.List;
 public class Train extends Thread {
 
     final static int ATTENTE = 1000;
-    final static int NB_PLACE_TOTAL = 25;
+    final static int NB_PLACE_TOTAL = 20;
 
 
     List<Trajet> ListeTrajet;
@@ -29,12 +29,12 @@ public class Train extends Thread {
     @Override
     public void run(){
         Collections.shuffle(ListeTrajet);
-        trajet = ListeTrajet.get(1);
+        trajet = ListeTrajet.get(0+(int)(Math.random()*2));
         System.out.println(getNom()+ " fait le " +trajet.toString());
 
         // GARE DE D2PART
         getTrajet().getGareDepart().entrerGare().entrerVoie(this);
-        System.out.println("Train: "+ getNom()+ "arrivé en gare: "+getTrajet().getGareDepart().getName());
+        System.out.println(getNom()+ " arrivé en gare "+getTrajet().getGareDepart().getName());
 
         try {
             sleep(ATTENTE);

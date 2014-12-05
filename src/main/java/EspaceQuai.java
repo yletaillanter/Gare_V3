@@ -44,8 +44,6 @@ public class EspaceQuai {
         synchronized (espaceVente){
             espaceVente.notifyAll();
         }
-
-        System.out.println("Train en gare : " + train.getNom());
     }
 
     synchronized public void quitterVoie(Train train){

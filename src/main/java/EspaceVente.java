@@ -6,7 +6,7 @@ import java.util.*;
 public class EspaceVente {
 
 
-    private final int TEMPS_IMPRESSION_TICKET = 5;
+    private final int TEMPS_IMPRESSION_TICKET = 100+(int)(Math.random()*800);
     private int nbGuichet = 4;
     private int nbGuichetDispo;
     private EspaceQuai espaceQuai;
